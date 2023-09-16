@@ -2,11 +2,12 @@ import React from "react";
 // import { makeStyles } from "@material-ui/core/styles";
 // import Card from "@material-ui/core/Card";
 // import CardContent from "@material-ui/core/CardContent";
-// import CardMedia from "@mui/core/CardMedia";
 
 // import unicornbikeImg from "./../assets/images/unicornbike.jpg";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
+import unicornBikeImg from "../assets/images/unicornbike.jpg";
 
 export interface IHomeProps {}
 
@@ -29,8 +30,11 @@ export interface IHomeProps {}
 export default function Home() {
   // const classes = useStyles();
   return (
-    <Card>
-      <Typography>Word of the Day</Typography>
+    <Card sx={{ maxWidth: 600, margin: "auto" }}>
+      <Typography align="center" variant="h6">
+        Word of the Day
+      </Typography>
+      <CardMedia component="img" image={unicornBikeImg} alt="unicorn bike" />
     </Card>
   );
 }
