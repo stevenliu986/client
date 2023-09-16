@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./core/Home";
+import About from "./core/About";
 
-function App() {
-  const [data, setData] = useState("");
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080")
-      .then((response) => setData(response.data));
-  }, []);
-  return <div className="App">{data}</div>;
-}
+interface IAppProps {}
+
+const App: React.FC<IAppProps> = (props) => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;
